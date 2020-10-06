@@ -28,6 +28,7 @@ update_function_layers(){
 }
 
 deploy_lambda_function(){
+	pwd
 	cd "{$INPUT_SOURCE_DIR}"
 	install_zip_dependencies
 	publish_dependencies_as_layer
