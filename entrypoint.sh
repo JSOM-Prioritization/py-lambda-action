@@ -3,6 +3,7 @@ set -e
 
 install_zip_dependencies(){
 	echo "Installing and zipping dependencies..."
+	cd "{$SOURCE_DIR}"
 	mkdir python
 	pip install --target=python -r "${INPUT_REQUIREMENTS_TXT}"
 	zip -r dependencies.zip ./python
