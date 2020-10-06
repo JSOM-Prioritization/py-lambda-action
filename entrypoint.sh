@@ -3,7 +3,6 @@ set -e
 
 install_zip_dependencies(){
 	echo "Installing and zipping dependencies..."
-	cd "{$INPUT_SOURCE_DIR}"
 	mkdir python
 	pip install --target=python -r "${INPUT_REQUIREMENTS_TXT}"
 	zip -r dependencies.zip ./python
@@ -29,6 +28,7 @@ update_function_layers(){
 }
 
 deploy_lambda_function(){
+	cd "{$INPUT_SOURCE_DIR}"
 	install_zip_dependencies
 	publish_dependencies_as_layer
 	publish_function_code
