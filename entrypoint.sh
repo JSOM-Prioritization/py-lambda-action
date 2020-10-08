@@ -4,7 +4,7 @@ set -e
 install_zip_dependencies(){
 	echo "Installing and zipping dependencies..."
 	mkdir python
-	pip install --target=python -r "${INPUT_REQUIREMENTS_TXT}"
+	pip install --target=python -r "{$INPUT_SOURCE_DIR}"/"${INPUT_REQUIREMENTS_TXT}"
 	zip -r dependencies.zip ./python
 }
 
@@ -18,7 +18,7 @@ publish_dependencies_as_layer(){
 
 publish_function_code(){
 	echo "Deploying the code itself..."
-	zip -r code.zip . -x \*.git\*
+	zip -r code.zip "{$INPUT_SOURCE_DIR}" -x \*.git\*
 	aws lambda update-function-code --function-name "${INPUT_LAMBDA_FUNCTION_NAME}" --zip-file fileb://code.zip
 }
 
