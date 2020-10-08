@@ -33,9 +33,8 @@ deploy_lambda_function(){
 	publish_function_code
 	update_function_layers
 }
-ls -l
-pwd 
-cd "{$INPUT_SOURCE_DIR}"
+ 
+#cd "{$INPUT_SOURCE_DIR}"
 deploy_lambda_function
 cd ..
-echo "Done."
+#echo "Done."
