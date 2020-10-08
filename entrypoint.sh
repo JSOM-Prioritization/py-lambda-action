@@ -34,7 +34,8 @@ deploy_lambda_function(){
 	update_function_layers
 }
  
+
 #cd "{$INPUT_SOURCE_DIR}"
 deploy_lambda_function
-cd ..
-#echo "Done."
+#cd ..
+echo "Done."
