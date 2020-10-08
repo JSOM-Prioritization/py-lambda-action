@@ -33,7 +33,7 @@ deploy_lambda_function(){
 	publish_function_code
 	update_function_layers
 }
-
+echo pwd 
 cd "{$INPUT_SOURCE_DIR}"
 deploy_lambda_function
 cd ..
