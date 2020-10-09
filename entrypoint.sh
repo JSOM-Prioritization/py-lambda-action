@@ -34,7 +34,7 @@ deploy_lambda_function(){
 	update_function_layers
 }
  
-
+pwd
 #cd "{$INPUT_SOURCE_DIR}"
 deploy_lambda_function
 #cd ..
