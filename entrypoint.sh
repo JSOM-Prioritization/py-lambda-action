@@ -35,6 +35,7 @@ deploy_lambda_function(){
 }
  
 pwd
+ls -a
 #cd "{$INPUT_SOURCE_DIR}"
 deploy_lambda_function
 #cd ..
